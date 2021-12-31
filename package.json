@@ -2,7 +2,7 @@
   "name": "plain-virtual-dom",
   "version": "0.0.1",
   "description": "Very small implementation of Virtual DOM",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "serve": "./node_modules/.bin/serve",
     "test": "echo \"Error: no test specified\" && exit 1"
