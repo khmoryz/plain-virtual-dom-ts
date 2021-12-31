@@ -35,8 +35,12 @@ setInterval(() => {
 
 const input = document.getElementById("input-id");
 input.oninput = handleInput;
-function handleInput(e) {
-  if (e.data) {
-    vDOM.children[0].children[0].attributes.content += e.data;
+function handleInput(e: Event) {
+  const { target } = e;
+  if (!(target instanceof HTMLInputElement)) {
+    return;
+  }
+  if (target.value) {
+    vDOM.children[0].children[0].attributes.content = "入力内容: " + target.value;
   }
 }
