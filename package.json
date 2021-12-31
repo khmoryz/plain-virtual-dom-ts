@@ -19,5 +19,8 @@
   "homepage": "https://github.com/khmory/plain-virtual-dom#readme",
   "dependencies": {
     "serve": "^13.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
   }
 }

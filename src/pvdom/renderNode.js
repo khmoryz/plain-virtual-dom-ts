@@ -1,18 +1,17 @@
+"use strict";
+exports.__esModule = true;
 function renderNode(node) {
-  const nodeElement = document.createElement(node.tagName);
-  for (const key in node.attributes) {
-    nodeElement.setAttribute(key, node.attributes[key]);
-  }
-
-  node.children.forEach((child) => {
-    if (child.tagName == "text") {
-      nodeElement.innerText = child.attributes.content;
-      return;
+    var nodeElement = document.createElement(node.tagName);
+    for (var key in node.attributes) {
+        nodeElement.setAttribute(key, node.attributes[key]);
     }
-    nodeElement.appendChild(renderNode(child));
-  });
-
-  return nodeElement;
+    node.children.forEach(function (child) {
+        if (child.tagName == "text") {
+            nodeElement.innerText = child.attributes.content;
+            return;
+        }
+        nodeElement.appendChild(renderNode(child));
+    });
+    return nodeElement;
 }
-
-export default renderNode;
+exports["default"] = renderNode;
