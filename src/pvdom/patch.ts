@@ -1,15 +1,17 @@
-function patch(target) {
-  let targetElement;
+import PatchTaget from "./types/patchTarget";
+
+function patch(patchTarget: PatchTaget) {
+  let patchTargetElement;
   let newElement;
-  switch (target.type) {
+  switch (patchTarget.type) {
     case "tagName":
-      targetElement = window.document.getElementById(target.id);
-      newElement = document.createElement(target.value);
-      targetElement.replaceWith(newElement);
+      patchTargetElement = window.document.getElementById(patchTarget.id);
+      newElement = document.createElement(patchTarget.value);
+      patchTargetElement.replaceWith(newElement);
       break;
     case "content":
-      targetElement = window.document.getElementById(target.id);
-      targetElement.innerText = target.value;
+      patchTargetElement = window.document.getElementById(patchTarget.id);
+      patchTargetElement.innerText = patchTarget.value;
       break;
     default:
       console.error("invalid patch type");
