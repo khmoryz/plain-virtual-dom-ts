@@ -33,13 +33,22 @@ setInterval(() => {
 }, 30);
 
 const input = document.getElementById("input-id");
-input.oninput = handleInput;
+if (input != null) {
+  input.oninput = handleInput;
+}
 function handleInput(e: Event) {
   const { target } = e;
   if (!(target instanceof HTMLInputElement)) {
     return;
   }
   if (target.value) {
-    vDOM.children[0].children[0].attributes.content = "入力内容: " + target.value;
+    if (vDOM.children) {
+      const h3Node: VNode | undefined = vDOM.children[0];
+      if (h3Node.children) {
+        const textNode: VNode | undefined = h3Node.children[0];
+        textNode.attributes.content = "入力内容: " + target.value;
+        // console.log(target.value);
+      }
+    }
   }
 }

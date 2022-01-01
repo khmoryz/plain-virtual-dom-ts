@@ -4,10 +4,10 @@ import patch from "./patch.js";
 import VNode from "./types/vnode";
 
 // ブラウザ表示中のオブジェクト
-let currentVDOM: VNode = null;
+let currentVDOM: VNode;
 
 function render(vDOM: VNode) {
-  if (currentVDOM === null) {
+  if (currentVDOM == null) {
     currentVDOM = JSON.parse(JSON.stringify(vDOM));
     const realElement = renderNode(vDOM);
     document.body.appendChild(realElement);

@@ -3,15 +3,22 @@ import PatchTaget from "./types/patchTarget";
 function patch(patchTarget: PatchTaget) {
   let patchTargetElement;
   let newElement;
+  // if(patchTarget){
+  //   return;
+  // }
   switch (patchTarget.type) {
     case "tagName":
       patchTargetElement = window.document.getElementById(patchTarget.id);
       newElement = document.createElement(patchTarget.value);
-      patchTargetElement.replaceWith(newElement);
+      if (patchTargetElement) {
+        patchTargetElement.replaceWith(newElement);
+      }
       break;
     case "content":
       patchTargetElement = window.document.getElementById(patchTarget.id);
-      patchTargetElement.innerText = patchTarget.value;
+      if (patchTargetElement) {
+        patchTargetElement.innerText = patchTarget.value;
+      }
       break;
     default:
       console.error("invalid patch type");
