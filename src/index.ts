@@ -22,7 +22,6 @@ const vDOM = {
         size: 30,
         content: "",
       },
-      children: [],
     },
   ],
 };

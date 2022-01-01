@@ -4,13 +4,15 @@ function renderNode(node) {
     nodeElement.setAttribute(key, node.attributes[key]);
   }
 
-  node.children.forEach((child) => {
-    if (child.tagName == "text") {
-      nodeElement.innerText = child.attributes.content;
-      return;
-    }
-    nodeElement.appendChild(renderNode(child));
-  });
+  if (node.children) {
+    node.children.forEach((child) => {
+      if (child.tagName == "text") {
+        nodeElement.innerText = child.attributes.content;
+        return;
+      }
+      nodeElement.appendChild(renderNode(child));
+    });
+  }
 
   return nodeElement;
 }
