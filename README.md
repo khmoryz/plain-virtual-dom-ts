@@ -7,5 +7,8 @@ Very small implementation of Virtual DOM
 ## INSTALL
 `npm install`
 
+## BUILD
+`npm run build`
+
 ## SERVE
 `npm run serve`
