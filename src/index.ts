@@ -1,6 +1,7 @@
 import PVDOM from "./pvdom/pvdom.js";
+import VNode from "./pvdom/types/vNode.js";
 
-const vDOM = {
+const vDOM: VNode = {
   tagName: "div",
   attributes: { id: "div-id", content: "" },
   children: [
@@ -19,7 +20,6 @@ const vDOM = {
       attributes: {
         id: "input-id",
         type: "text",
-        size: 30,
         content: "",
       },
     },
