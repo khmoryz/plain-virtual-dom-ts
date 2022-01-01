@@ -2,7 +2,7 @@ import VNode from "./types/vNode";
 import PatchTaget from "./types/patchTarget";
 
 function diff(oldObj: VNode, newObj: VNode) {
-  let patchTarget: PatchTaget[];
+  let patchTarget: PatchTaget[] = [];
   diffNode(oldObj, newObj, patchTarget);
   return patchTarget;
 }
